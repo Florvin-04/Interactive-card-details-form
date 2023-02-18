@@ -1,0 +1,324 @@
+/* https://andy-bell.co.uk/a-modern-css-reset/ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* custom Proterties */
+
+:root {
+  --PM-clr-linear-active-border-1: 249, 99%, 64%;
+  --PM-clr-linear-active-border-2: 278, 94%, 30%;
+  --PM-clr-error-border-2: 0, 100%, 66%;
+
+  --NC--white: 0, 0%, 100%;
+  --NC-light-grayish-violet: 270, 3%, 87%;
+  --NC-dark-grayish-violet: 279, 6%, 55%;
+  --NC-very-dark-violet: 278, 68%, 11%;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+html {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-image: url("./images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 375px;
+  /* border: 1px solid red; */
+  background-position: top;
+}
+
+.card {
+  color: hsl(var(--NC--white));
+  width: 100%;
+}
+
+.front-card {
+  position: relative;
+  background-image: url("./images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  width: 284px;
+  height: 155px;
+  /* background-color: red; */
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.front-card-details {
+  padding: 1rem;
+  color: hsl(var(--NC-light-grayish-violet));
+}
+
+.front-card-details > img {
+  height: 30px;
+  margin-bottom: 1.5rem;
+}
+
+.front-card-details > p {
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.card_name-expiry-cont {
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.back-card {
+  position: relative;
+  background-image: url("./images/bg-card-back.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 284px;
+  height: 155px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 2rem;
+  left: 3rem;
+  z-index: -1;
+}
+.back-card-details {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-right: 3em;
+  font-size: 0.7rem;
+}
+
+form {
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.form-control {
+  flex-direction: column;
+  --gap: 0.1rem;
+}
+.hidden {
+  display: none;
+}
+label {
+  color: hsl(var(--NC-very-dark-violet));
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+input {
+  position: relative;
+  border: 2px solid hsl(var(--NC-light-grayish-violet));
+  outline: none;
+  padding: 0.4rem;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+
+input:focus {
+  border-image: linear-gradient(hsl(var(--PM-clr-linear-active-border-1)), hsl(var(--PM-clr-linear-active-border-2)));
+  border-image-slice: 1;
+}
+
+.date-cvc_cont input[name="cvc"] {
+  width: 100%;
+}
+
+.MM-YY_cont > * {
+  width: 5rem;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: hsl(var(--NC-dark-grayish-violet));
+  /* opacity: 1; Firefox */
+}
+
+.submit-btn {
+  background-color: hsl(var(--NC-very-dark-violet));
+  color: hsl(var(--NC--white));
+  border-radius: 0.4rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0.6rem 0;
+}
+
+.error {
+  color: hsl(var(--PM-clr-error-border-2));
+  display: none;
+}
+
+input[required] {
+  border: 1px solid hsl(var(--PM-clr-error-border-2));
+}
+
+.thank-you {
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+  padding: 0 1rem;
+}
+
+.thank-you > p {
+  color: hsl(var(--NC-dark-grayish-violet));
+}
+.thank-you > h2 {
+  color: hsl(var(--NC-very-dark-violet));
+}
+.thank-you > button {
+  /* flex-grow: 1; */
+  width: 100%;
+}
+
+@media (min-width: 375px) {
+  body {
+    background-image: url("./images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 100vh;
+  }
+
+  .container {
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    gap: 8rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    /* outline: 1px solid red; */
+    right: 10rem;
+    font-size: 1.5rem;
+  }
+
+  .front-card {
+    position: absolute;
+    background-size: contain;
+    background-position: contain;
+    width: 400px;
+    height: 500px;
+    /* bottom: 1rem;
+      right: 10rem; */
+    /* display: none; */
+    font-size: 1em;
+    top: 7rem;
+    margin-left: 10rem;
+  }
+
+  .front-card-details > img {
+    margin-bottom: 4rem;
+    height: 2rem;
+  }
+
+  .back-card {
+    position: absolute;
+    top: 20rem;
+    margin-left: 10rem;
+    width: 400px;
+    height: 300px;
+    font-size: 1em;
+  }
+
+  .back-card-details {
+    /* outline: 1px solid red; */
+    margin-bottom: 5rem;
+    font-size: 1rem;
+  }
+
+  form {
+    margin-left: 20rem;
+  }
+
+  .thank-you {
+    width: 30%;
+    --gap: 2rem;
+    margin-left: 20rem;
+  }
+}

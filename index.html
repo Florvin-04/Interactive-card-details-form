@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <script src="index.js" defer></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="card">
+          <div class="back-card flex">
+            <div class="back-card-details">
+              <p class="back-card-cvc">000</p>
+            </div>
+          </div>
+          <div class="front-card">
+            <div class="front-card-details">
+              <img src="./images/card-logo.svg" alt="" />
+              <p class="card_number">0000 0000 0000 0000</p>
+              <div class="card_name-expiry-cont uppercase">
+                <p class="card_name">Jane Appleseed</p>
+                <p class="card_expiry"><span class="card_expiry_month">00</span>/<span class="card_expiry_year">00</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <form class="flex" action="#">
+        <div class="form-control flex">
+          <label class="uppercase name" for="">Cardholder Name </label>
+          <input data-input="name" type="text" placeholder="e.g. Jane Appleseed " />
+          <p class="error">error</p>
+        </div>
+        <div class="form-control flex">
+          <label class="uppercase number" for="">Card Number </label>
+          <input data-input="card-number" maxlength="19" type="text" placeholder="e.g. 1234 5678 9123" />
+          <p class="error">error</p>
+        </div>
+        <div class="date-cvc_cont flex">
+          <div class="form-control flex">
+            <label class="uppercase date" for="">Exp. Date (MM/YY) </label>
+            <div class="MM-YY_cont flex">
+              <input data-input="month" maxlength="2" type="text" placeholder="MM" />
+              <input data-input="year" maxlength="2" type="text" placeholder="YY" />
+            </div>
+            <p class="error">error</p>
+          </div>
+          <div class="form-control flex">
+            <label class="uppercase cvc" for="">CVC</label>
+            <input data-input="cvc" name="cvc" maxlength="3" type="text" placeholder="CVC e.g. 123" />
+            <p class="error">error</p>
+          </div>
+        </div>
+        <button type="submit" id="submit-btn" class="submit-btn">Confirm</button>
+      </form>
+
+      <div class="thank-you flex hidden">
+        <img src="./images/icon-complete.svg" alt="" />
+        <h2 class="uppercase">thank you!</h2>
+        <p class="">we've added you card details</p>
+        <button type="button" id="continue-btn" class="submit-btn">Continue</button>
+      </div>
+    </div>
+
+    <!-- Completed state start -->
+
+    <!-- Thank you! We've added your card details Continue -->
+
+    <!-- <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div> -->
+  </body>
+</html>
